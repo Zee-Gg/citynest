@@ -5,20 +5,20 @@ import SectionHeading from "./ui/SectionHeading";
 
 const faqs = [
   {
-    q: "How much is the security deposit?",
-    a: "We require a one-month security deposit along with your first month's rent. The deposit is fully refundable at the time of move-out, provided there are no damages and a 30-day notice is given.",
+    q: "Which branches are currently available?",
+    a: "We currently have branches at Thokar Niaz Baig, DHA, Gulberg, and GT Road in Lahore.",
   },
   {
-    q: "Are meals included in the monthly rent?",
-    a: "Meal plans are optional. You can choose to add Breakfast & Dinner for an additional Rs. 6,000 per month. Our menu is chef-curated and focused on healthy, home-style cooking.",
+    q: "What facilities are available in rooms?",
+    a: "Our key facilities include filtered water, kitchen access, cupboards, comfortable beds, geysers, and clean washrooms.",
   },
   {
-    q: "What are the visiting hours?",
-    a: "To maintain security and privacy, visiting hours are from 10:00 AM to 9:00 PM. All visitors must sign in at the front desk. Overnight guests are not permitted.",
+    q: "How far is the hostel from public transport?",
+    a: "One of our strongest highlights is proximity to the Orange Line Train station, around a 3-minute walk.",
   },
   {
-    q: "Is there a backup for electricity?",
-    a: "Yes, both our branches are equipped with heavy-duty commercial generators that provide seamless backup for lights, fans, and WiFi routers during outages.",
+    q: "How can I book or ask for room availability?",
+    a: "You can call us directly at 0300 8570956 or message us on WhatsApp for real-time room availability and booking details.",
   },
 ];
 
@@ -26,7 +26,7 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section className="py-20 bg-[#F5F5F5]">
+    <section className="py-20 bg-[#F5F5F5]" id="faq">
       <div className="max-w-3xl mx-auto px-8">
         <SectionHeading title="Common Questions" />
 

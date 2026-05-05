@@ -2,7 +2,6 @@
 
 import { useState, useEffect, JSX } from "react";
 import Link from "next/link";
-import Button from "./ui/Button";
 
 type NavLink = {
   label: string;
@@ -10,10 +9,10 @@ type NavLink = {
 };
 
 const navLinks: NavLink[] = [
+  { label: "Branches", href: "#locations" },
   { label: "Rooms", href: "#rooms" },
-  { label: "Locations", href: "#locations" },
   { label: "Amenities", href: "#amenities" },
-  { label: "Reviews", href: "#reviews" },
+  { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -36,7 +35,7 @@ export default function Navbar(): JSX.Element {
       <nav className="flex justify-between items-center px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 max-w-7xl mx-auto">
         
         {/* Logo */}
-        <Link href="#" className="group">
+        <Link href="#hero" className="group">
           <div className="text-lg md:text-xl font-bold tracking-tight text-black uppercase font-sans">
             City <span className="text-[#fdae3c]">Nest</span>
           </div>
@@ -59,12 +58,12 @@ export default function Navbar(): JSX.Element {
         {/* CTA Button */}
         <div className="hidden md:block">
           <a
-            href="https://wa.me/923001234567"
+            href="https://wa.me/923008570956"
             target="_blank"
             rel="noopener noreferrer"
           >
             <button className="bg-[#fdae3c] text-black text-sm font-bold px-6 py-2.5 rounded-lg hover:bg-[#f9a020] transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 active:scale-95">
-              WhatsApp Us
+              Book on WhatsApp
             </button>
           </a>
         </div>
@@ -107,12 +106,12 @@ export default function Navbar(): JSX.Element {
           ))}
           <div className="pt-2 border-t border-gray-100">
             <a
-              href="https://wa.me/923001234567"
+              href="https://wa.me/923008570956"
               target="_blank"
               rel="noopener noreferrer"
             >
               <button className="w-full bg-[#fdae3c] text-black text-sm font-bold px-4 py-2.5 rounded-lg hover:bg-[#f9a020] transition-colors">
-                WhatsApp Us
+                Book on WhatsApp
               </button>
             </a>
           </div>

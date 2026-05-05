@@ -1,4 +1,5 @@
 import SectionHeading from "./ui/SectionHeading";
+import Image from "next/image";
 
 const images = [
   {
@@ -35,9 +36,11 @@ export default function Gallery() {
               key={img.alt}
               className={`overflow-hidden rounded-2xl ${img.className.replace('col-span-2', 'sm:col-span-2').replace('row-span-2', 'sm:row-span-2')} group cursor-pointer`}
             >
-              <img
+              <Image
                 src={img.src}
                 alt={img.alt}
+                width={900}
+                height={700}
                 className="w-full h-full object-cover hover:scale-110 transition-all duration-700 group-hover:brightness-75"
               />
             </div>

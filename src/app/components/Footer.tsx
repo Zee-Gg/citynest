@@ -4,16 +4,17 @@ import Link from "next/link";
 import { JSX } from "react";
 
 const quickLinks: string[] = [
-  "Privacy Policy",
-  "Terms of Service",
-  "Careers",
-  "Support",
+  "Rooms",
+  "Branches",
+  "Amenities",
+  "Contact",
 ];
 
 const locationsList: string[] = [
-  "Gulberg Branch",
-  "DHA Branch",
-  "Bahria Town (Coming Soon)",
+  "Thokar Niaz Baig",
+  "DHA",
+  "Gulberg",
+  "GT Road",
 ];
 
 export default function Footer(): JSX.Element {
@@ -27,7 +28,7 @@ export default function Footer(): JSX.Element {
             <span>City <span className="text-[#fdae3c]">Nest</span></span>
           </div>
           <p className="text-gray-400 text-xs leading-relaxed max-w-xs">
-            A premium living experience designed for the modern urban dweller. Privacy, comfort, and community at your fingertips.
+            Reliable hostel accommodation in Lahore with practical facilities and easy commute access.
           </p>
         </div>
 
@@ -38,7 +39,15 @@ export default function Footer(): JSX.Element {
             {quickLinks.map((link) => (
               <Link
                 key={link}
-                href="#"
+                href={
+                  link === "Rooms"
+                    ? "#rooms"
+                    : link === "Branches"
+                      ? "#locations"
+                      : link === "Amenities"
+                        ? "#amenities"
+                        : "#contact"
+                }
                 className="hover:text-[#fdae3c] transition-colors w-fit"
               >
                 {link}
@@ -52,7 +61,7 @@ export default function Footer(): JSX.Element {
           <div className="text-white font-bold mb-6 text-xs tracking-widest">LOCATIONS</div>
           <div className="flex flex-col gap-3 text-[10px] uppercase tracking-widest text-gray-400">
             {locationsList.map((l) => (
-              <span key={l} className="hover:text-[#fdae3c] transition-colors">{l}</span>
+              <span key={l} className="transition-colors">{l}</span>
             ))}
           </div>
         </div>
@@ -62,7 +71,7 @@ export default function Footer(): JSX.Element {
           <div className="text-white font-bold mb-6 text-xs tracking-widest">FOLLOW US</div>
           <div className="flex gap-3">
             <Link
-              href="#"
+              href="https://wa.me/923008570956"
               className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-[#fdae3c] hover:text-black hover:border-[#fdae3c] transition-all duration-200"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -70,7 +79,7 @@ export default function Footer(): JSX.Element {
               </svg>
             </Link>
             <Link
-              href="#"
+              href="tel:03008570956"
               className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-[#fdae3c] hover:text-black hover:border-[#fdae3c] transition-all duration-200"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -86,7 +95,7 @@ export default function Footer(): JSX.Element {
       {/* Bottom */}
       <div className="max-w-7xl mx-auto px-8 mt-16 pt-8 border-t border-white/10 text-center">
         <p className="text-xs uppercase tracking-widest text-slate-400">
-          © 2024 City Nest Hostels. Refined Urban Sanctuary.
+          © 2026 City Nest Hostels Lahore.
         </p>
       </div>
     </footer>

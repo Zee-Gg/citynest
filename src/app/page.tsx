@@ -4,8 +4,6 @@ import StatsBar from "./components/Statsbar";
 import Locations from "./components/Locations";
 import Rooms from "./components/Rooms";
 import Amenities from "./components/Amenities";
-import Gallery from "./components/Gallery";
-import Reviews from "./components/Reviews";
 import FAQ from "./components/FAQ";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -20,15 +18,13 @@ export default function Home(): JSX.Element {
       <Locations />
       <Rooms />
       <Amenities />
-      <Gallery />
-      <Reviews />
       <FAQ />
       <Contact />
       <Footer />
 
       {/* Floating WhatsApp Button */}
       <a
-        href="https://wa.me/923001234567"
+        href="https://wa.me/923008570956"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-8 right-8 z-40 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 active:scale-95 transition-all duration-200 hover:-translate-y-1 animate-bounce"
