@@ -1,8 +1,10 @@
 import SectionHeading from "./ui/SectionHeading";
-import Button from "./ui/Button";
 import { JSX } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 interface Room {
+  id: string;
   name: string;
   price: string;
   originalPrice?: string;
@@ -13,41 +15,40 @@ interface Room {
 
 const rooms: Room[] = [
   {
-    name: "2-Bed Private",
-    price: "Rs. 28k",
-    originalPrice: "Rs. 32,000",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAQA7rtLqeuspHSnOxdPuQKqt4HxtDwFAuneqIzoAYsIPU6dKozIEzlJ5uOIKYzoqWLeFQMJ1EoQQ7Pfn5y2FZri87UzY4aFBETHGXWrAUD9ODXRdL2zcsLspD6EuqpfyPCD0Wh3bHDyZSZFTkzgu364WD_UndlmcgalV-7j4UyWuAVbJcdAQs-WCZNuxlG1f-_oLs_Q3jRKLaRX3M0aSXbZw2iREyEpP8EitdZMpcGa2VQ5nafeP2_KzFKfZaiYTGXRLty5-TF88xH",
+    id: "2-seater",
+    name: "2-Seater Room",
+    price: "Rs 18,000",
+    image: "/2seater.png",
     amenities: [
-      { icon: "ac_unit", label: "AC" },
-      { icon: "tv", label: "TV" },
-      { icon: "shower", label: "Bath" },
-      { icon: "wifi", label: "WiFi" },
+      { icon: "wifi", label: "Filtered Water" },
+      { icon: "restaurant", label: "Kitchen Access" },
+      { icon: "lock", label: "CupBoards" },
+      { icon: "ac_unit", label: "Comfortable Beds" },
     ],
   },
   {
-    name: "3-Person Sharing",
-    price: "Rs. 22k",
+    id: "3-seater",
+    name: "3-Seater Room",
+    price: "Rs 16,000",
     popular: true,
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBqhXLIAtBfyhwrA1JK8MImBZTIcjy50jdkQ4EfX0DTVlTp9ssh23f9z0d-9qyBaFIFWTxsUnrJH96C376n4YFICvwhhnowxiDjQ4MaDJ0XzRp-v_3TJVdI1tcN5SDJk4w4BNEBz-WHhJQNy02f1nk_DWB5Z5S7TqCW_VifkpVnWjT_jWKekHjwcw7PUqQEricQfWmFAqaK04Gk1LRkaMtTjHoo4rjZRIzzKvBCiVL5i_zQPAHxEwKuNYHkgHxpqU-jhBBvwaU0xSr2",
+    image: "/3seater.png",
     amenities: [
-      { icon: "ac_unit", label: "AC" },
-      { icon: "wifi", label: "WiFi" },
-      { icon: "shower", label: "Bath" },
-      { icon: "restaurant", label: "Meals" },
+      { icon: "wifi", label: "Filtered Water" },
+      { icon: "restaurant", label: "Kitchen Access" },
+      { icon: "shower", label: "Clean Washrooms" },
+      { icon: "ac_unit", label: "Comfortable Beds" },
     ],
   },
   {
-    name: "4-Person Sharing",
-    price: "Rs. 18k",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAh2qlt3nzf9lNbvW2ZNoCNjFOWLyDq7-zCEDa43rfFVoRojf2AVLQb-mTq7VOsVs4SjKX29sEc-CMsgblKkPHAlavthGk48C0mCfgs0RiyB5bwUOY9vVpJvzxkmElcECLwO039A0Lzc2yY4pKaZd4z21hqFtgKY--fTSLNiYNydcks8tQg1Hja3BAva6SGHseBg87SIUq6x7v4yMhcaIh56Oe2Y-N5zxClbFiIf0wA8zjBwIgCGnYnClUpv2WlQDhCR-D_fANttnkk",
+    id: "4-seater",
+    name: "4-Seater Room",
+    price: "Rs 14,000",
+    image: "/4seater.png",
     amenities: [
-      { icon: "wifi", label: "WiFi" },
-      { icon: "shower", label: "Bath" },
-      { icon: "laundry", label: "Laundry" },
-      { icon: "lock", label: "Locker" },
+      { icon: "wifi", label: "Filtered Water" },
+      { icon: "restaurant", label: "Kitchen Access" },
+      { icon: "lock", label: "CupBoards" },
+      { icon: "shower", label: "Geysers + Washrooms" },
     ],
   },
 ];
@@ -59,14 +60,14 @@ export default function Rooms() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-16 gap-4 sm:gap-6">
           <div>
             <SectionHeading 
-              title="Find Your Perfect Room"
-              subtitle="Thoughtfully designed spaces for every lifestyle and budget"
+              title="Room Options"
+              subtitle="Available in all City Nest branches with practical shared-living comfort"
               align="left"
             />
             <div className="flex items-center gap-2 mt-6">
               <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
               <span className="text-xs italic text-gray-500">
-                Limited availability for November move-in
+                Live availability shared on call/WhatsApp
               </span>
             </div>
           </div>
@@ -88,9 +89,11 @@ export default function Rooms() {
                 </div>
               )}
               <div className="h-56 relative overflow-hidden bg-gray-200">
-                <img
+                <Image
                   src={room.image}
                   alt={room.name}
+                  width={900}
+                  height={500}
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
                 />
               </div>
@@ -138,9 +141,22 @@ export default function Rooms() {
                   })}
                 </div>
 
-                <button className="w-full bg-[#fdae3c] text-black font-semibold py-3 rounded-lg text-sm hover:bg-[#f9a020] transition-all duration-200 hover:shadow-md active:scale-95">
-                  Book via WhatsApp
-                </button>
+                <div className="flex flex-col gap-2">
+                  <Link
+                    href={`/rooms/${room.id}`}
+                    className="w-full bg-white text-black font-semibold py-3 rounded-lg text-sm border-2 border-[#fdae3c] hover:bg-[#fff9f0] transition-all duration-200 block text-center"
+                  >
+                    View Room Details
+                  </Link>
+                  <a
+                    href="https://wa.me/923008570956"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full bg-[#fdae3c] text-black font-semibold py-3 rounded-lg text-sm hover:bg-[#f9a020] transition-all duration-200 hover:shadow-md active:scale-95 block text-center"
+                  >
+                    Book via WhatsApp
+                  </a>
+                </div>
               </div>
             </div>
           ))}

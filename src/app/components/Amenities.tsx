@@ -1,14 +1,14 @@
 import SectionHeading from "./ui/SectionHeading";
 
 const amenities = [
-  { icon: "wifi", label: "High-Speed WiFi" },
-  { icon: "security", label: "24/7 Security" },
-  { icon: "videocam", label: "CCTV Monitoring" },
-  { icon: "bolt", label: "Generator Backup" },
-  { icon: "cleaning_services", label: "Daily Cleaning" },
-  { icon: "local_laundry_service", label: "Laundry Service" },
-  { icon: "restaurant", label: "Meal Options" },
-  { icon: "local_parking", label: "Safe Parking" },
+  { icon: "wifi", label: "Filtered Water" },
+  { icon: "restaurant", label: "Kitchen" },
+  { icon: "security", label: "CupBoards" },
+  { icon: "bolt", label: "Comfortable Beds" },
+  { icon: "cleaning_services", label: "Geysers" },
+  { icon: "local_laundry_service", label: "Clean Washrooms" },
+  { icon: "videocam", label: "Orange Line Nearby" },
+  { icon: "local_parking", label: "4 Branches in Lahore" },
 ];
 
 export default function Amenities() {
@@ -16,8 +16,8 @@ export default function Amenities() {
     <section className="py-12 sm:py-20 bg-gradient-to-br from-[#0D1B2A] to-[#1a2635]" id="amenities">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         <SectionHeading
-          title="Everything You Need, Nothing You Don't"
-          subtitle="World-class amenities designed for your comfort and productivity"
+          title="Facilities You Actually Need"
+          subtitle="Essential hostel features for comfortable daily living"
           light
         />
 

@@ -1,5 +1,3 @@
-import Button from "./ui/Button";
-
 export default function Contact() {
   return (
     <section className="py-12 sm:py-20 bg-white" id="contact">
@@ -13,8 +11,8 @@ export default function Contact() {
             <ul className="space-y-2 sm:space-y-4 mb-6 sm:mb-10">
               {[
                 "Book a personalized tour today",
-                "Reserve your room with an advance token",
-                "Hassle-free move-in within 24 hours",
+                "Get live room availability on phone/WhatsApp",
+                "Choose your nearest branch in Lahore",
               ].map((item) => (
                 <li key={item} className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-200">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fdae3c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
@@ -25,9 +23,14 @@ export default function Contact() {
                 </li>
               ))}
             </ul>
-            <button className="w-full sm:w-fit bg-[#fdae3c] text-black text-xs sm:text-sm font-bold px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg hover:bg-[#f9a020] transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 active:scale-95">
+            <a
+              href="https://wa.me/923008570956"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-fit bg-[#fdae3c] text-black text-xs sm:text-sm font-bold px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg hover:bg-[#f9a020] transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 active:scale-95 text-center"
+            >
               WhatsApp Us Now
-            </button>
+            </a>
           </div>
 
           {/* Right panel */}
@@ -38,25 +41,25 @@ export default function Contact() {
                   Phone Support
                 </div>
                 <div className="font-sans font-bold text-xl text-black">
-                  +92 (300) 123 4567
+                  0300 8570956
                 </div>
                 <div className="text-xs text-gray-500 mt-1">Available 24/7</div>
               </div>
               <div>
                 <div className="text-[#fdae3c] text-[10px] font-bold uppercase tracking-widest mb-2">
-                  Email Us
+                  WhatsApp
                 </div>
                 <div className="font-sans font-bold text-xl text-black">
-                  hello@citynest.com
+                  +92 300 8570956
                 </div>
-                <div className="text-xs text-gray-500 mt-1">Response within 2 hours</div>
+                <div className="text-xs text-gray-500 mt-1">Fast response for booking queries</div>
               </div>
               <div>
                 <div className="text-[#fdae3c] text-[10px] font-bold uppercase tracking-widest mb-2">
-                  Corporate Office
+                  Branches
                 </div>
                 <div className="text-gray-700 text-sm max-w-xs">
-                  Suite 402, Al-Hafeez Heights, Gulberg III, Lahore, Pakistan.
+                  Thokar Niaz Baig, DHA, Gulberg, and GT Road - Lahore.
                 </div>
               </div>
             </div>
